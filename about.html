@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>About Us - Marketing Fundos</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='design.css'>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-section">
+                <svg class="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Outer circle -->
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="#ffd700" stroke-width="2"/>
+                    <!-- Target rings -->
+                    <circle cx="50" cy="50" r="35" fill="none" stroke="#ffed4e" stroke-width="1.5" opacity="0.7"/>
+                    <circle cx="50" cy="50" r="25" fill="none" stroke="#ffd700" stroke-width="1.5" opacity="0.7"/>
+                    <!-- Center filled circle -->
+                    <circle cx="50" cy="50" r="15" fill="#ffd700"/>
+                    <!-- Arrow pointing up-right -->
+                    <g transform="translate(50, 50)">
+                        <path d="M -5 5 L 8 -8 L 5 -5" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <line x1="8" y1="-8" x2="8" y2="8" stroke="#6366f1" stroke-width="1.5" opacity="0.5"/>
+                        <line x1="8" y1="-8" x2="-8" y2="-8" stroke="#6366f1" stroke-width="1.5" opacity="0.5"/>
+                    </g>
+                </svg>
+                <h1>Marketing Fundos</h1>
+            </div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+                <a href="marketting.html">Marketing</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="hero">
+            <h2>About Marketing Fundos</h2>
+            <p>Discover our story, mission, and the team behind your success</p>
+        </div>
+
+        <div class="content">
+            <h2>Our Story</h2>
+            <p>
+                Marketing Fundos was founded with a simple yet powerful mission: to transform ideas into success. 
+                We started as a small team of passionate marketers, designers, and strategists who believed that every 
+                business, regardless of size, deserves access to world-class marketing solutions.
+            </p>
+            <p>
+                Over the years, we've grown into a full-service marketing agency trusted by startups, 
+                SMEs, and Fortune 500 companies. Our journey has been marked by innovation, dedication, and 
+                an unwavering commitment to delivering exceptional results.
+            </p>
+
+            <h3>Our Mission</h3>
+            <p>
+                To empower businesses with cutting-edge marketing strategies and creative solutions that drive growth, 
+                build lasting relationships with customers, and create measurable impact in the digital landscape.
+            </p>
+
+            <h3>Our Vision</h3>
+            <p>
+                To be the most trusted marketing partner for businesses worldwide, recognized for our innovation, 
+                expertise, and transformative results that exceed expectations.
+            </p>
+
+            <h2>Why Choose Us?</h2>
+            <ul>
+                <li><strong>Proven Track Record:</strong> Over 500+ successful campaigns with a 95% client retention rate</li>
+                <li><strong>Expert Team:</strong> Award-winning professionals with 10+ years of experience in digital marketing</li>
+                <li><strong>Data-Driven Approach:</strong> Every strategy is backed by comprehensive analytics and insights</li>
+                <li><strong>Custom Solutions:</strong> Tailored marketing strategies designed specifically for your business goals</li>
+                <li><strong>24/7 Support:</strong> Dedicated support team always ready to assist you</li>
+                <li><strong>Cutting-Edge Technology:</strong> We use the latest marketing tools and platforms</li>
+            </ul>
+
+            <h2>Our Core Values</h2>
+            <ul>
+                <li><strong>Integrity:</strong> We operate with honesty and transparency in all our dealings</li>
+                <li><strong>Innovation:</strong> We continuously evolve and adopt new strategies to stay ahead</li>
+                <li><strong>Excellence:</strong> We deliver nothing but the best for our clients</li>
+                <li><strong>Collaboration:</strong> We work closely with clients as true partners in their journey</li>
+                <li><strong>Results-Oriented:</strong> Every action is focused on delivering measurable success</li>
+            </ul>
+
+            <h2>Our Achievements</h2>
+            <ul>
+                <li>🏆 Best Digital Marketing Agency Award 2024</li>
+                <li>🌟 5-Star Rating on All Major Platforms</li>
+                <li>📈 Average Client Growth: 250% in Year 1</li>
+                <li>🎯 Successfully Managed 500+ Campaigns</li>
+                <li>🌍 Serving Clients Across 50+ Countries</li>
+                <li>💼 Trusted by Industry Leaders and Startups Alike</li>
+            </ul>
+        </div>
+
+        <div class="cards-grid">
+            <div class="card">
+                <h3>📊 500+ Projects</h3>
+                <p>Successfully delivered and managed hundreds of marketing campaigns across diverse industries.</p>
+            </div>
+            <div class="card">
+                <h3>🎯 95% Satisfaction</h3>
+                <p>Our clients consistently rate us highly for quality, creativity, and professional service.</p>
+            </div>
+            <div class="card">
+                <h3>🚀 100% Growth</h3>
+                <p>Average client revenue growth of 100-300% within the first year of partnership.</p>
+            </div>
+            <div class="card">
+                <h3>🌍 Global Reach</h3>
+                <p>Serving businesses and organizations across 50+ countries worldwide.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Marketing Fundos. All rights reserved.</p>
+        <p>Transforming Ideas into Success | <a href="contact.html">Contact Us</a></p>
+    </footer>
+
+    <!-- Scroll Buttons -->
+    <div class="scroll-buttons">
+        <button class="scroll-btn scroll-to-top" title="Scroll to Top">↑</button>
+        <button class="scroll-btn scroll-to-bottom" title="Scroll to Bottom">↓</button>
+    </div>
+
+    <script>
+        const scrollToTopBtn = document.querySelector('.scroll-to-top');
+        const scrollToBottomBtn = document.querySelector('.scroll-to-bottom');
+
+        // Show/Hide buttons based on scroll position
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+
+            if (window.scrollY < document.documentElement.scrollHeight - window.innerHeight - 300) {
+                scrollToBottomBtn.classList.add('show');
+            } else {
+                scrollToBottomBtn.classList.remove('show');
+            }
+        });
+
+        // Scroll to top
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Scroll to bottom
+        scrollToBottomBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: document.documentElement.scrollHeight,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>

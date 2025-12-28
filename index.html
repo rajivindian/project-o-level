@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Marketing Fundos</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='design.css'>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-section">
+                <svg class="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Outer circle -->
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="#ffd700" stroke-width="2"/>
+                    <!-- Target rings -->
+                    <circle cx="50" cy="50" r="35" fill="none" stroke="#ffed4e" stroke-width="1.5" opacity="0.7"/>
+                    <circle cx="50" cy="50" r="25" fill="none" stroke="#ffd700" stroke-width="1.5" opacity="0.7"/>
+                    <!-- Center filled circle -->
+                    <circle cx="50" cy="50" r="15" fill="#ffd700"/>
+                    <!-- Arrow pointing up-right -->
+                    <g transform="translate(50, 50)">
+                        <path d="M -5 5 L 8 -8 L 5 -5" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <line x1="8" y1="-8" x2="8" y2="8" stroke="#6366f1" stroke-width="1.5" opacity="0.5"/>
+                        <line x1="8" y1="-8" x2="-8" y2="-8" stroke="#6366f1" stroke-width="1.5" opacity="0.5"/>
+                    </g>
+                </svg>
+                <h1>Marketing Fundos</h1>
+            </div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+                <a href="marketting.html">Marketing</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="hero">
+            <h2>Welcome to Marketing Fundos</h2>
+            <p>Your ultimate destination for innovative marketing solutions and strategies</p>
+        </div>
+
+        <div class="cards-grid">
+            <div class="card">
+                <h3>📱 Digital Marketing</h3>
+                <p>Reach your audience across all digital platforms with our cutting-edge strategies.</p>
+                <a href="services.html" class="btn btn-primary">Learn More</a>
+            </div>
+            <div class="card">
+                <h3>🎨 Creative Design</h3>
+                <p>Eye-catching designs that make your brand stand out from the competition.</p>
+                <a href="services.html" class="btn btn-primary">Learn More</a>
+            </div>
+            <div class="card">
+                <h3>📊 Analytics & Data</h3>
+                <p>Data-driven insights to optimize your marketing campaigns and boost ROI.</p>
+                <a href="services.html" class="btn btn-primary">Learn More</a>
+            </div>
+            <div class="card">
+                <h3>🚀 Growth Strategy</h3>
+                <p>Scale your business with our proven growth and expansion strategies.</p>
+                <a href="services.html" class="btn btn-primary">Learn More</a>
+            </div>
+        </div>
+
+        <div class="portfolio-section">
+            <h2>Our Portfolio & Samples</h2>
+            <p class="portfolio-intro">Check out some of our recent marketing campaigns and creative work</p>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1557821552-17105176677c?w=400&h=300&fit=crop" alt="Digital Marketing Campaign">
+                    <div class="portfolio-overlay">
+                        <h3>Digital Marketing Campaign</h3>
+                        <p>Social media strategy that boosted engagement by 300%</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop" alt="Brand Design">
+                    <div class="portfolio-overlay">
+                        <h3>Brand Design</h3>
+                        <p>Complete rebranding for tech startup</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop" alt="Analytics Dashboard">
+                    <div class="portfolio-overlay">
+                        <h3>Analytics Dashboard</h3>
+                        <p>Data visualization for performance tracking</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop" alt="SEO Optimization">
+                    <div class="portfolio-overlay">
+                        <h3>SEO Optimization</h3>
+                        <p>Increased organic traffic by 250%</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop" alt="Content Strategy">
+                    <div class="portfolio-overlay">
+                        <h3>Content Strategy</h3>
+                        <p>Engaging blog and social content creation</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop" alt="Email Marketing">
+                    <div class="portfolio-overlay">
+                        <h3>Email Marketing</h3>
+                        <p>Conversion-focused email campaigns</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Marketing Fundos. All rights reserved.</p>
+        <p>Transforming Ideas into Success | <a href="contact.html">Contact Us</a></p>
+    </footer>
+
+    <!-- Scroll Buttons -->
+    <div class="scroll-buttons">
+        <button class="scroll-btn scroll-to-top" title="Scroll to Top">↑</button>
+        <button class="scroll-btn scroll-to-bottom" title="Scroll to Bottom">↓</button>
+    </div>
+
+    <script>
+        const scrollToTopBtn = document.querySelector('.scroll-to-top');
+        const scrollToBottomBtn = document.querySelector('.scroll-to-bottom');
+
+        // Show/Hide buttons based on scroll position
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+
+            if (window.scrollY < document.documentElement.scrollHeight - window.innerHeight - 300) {
+                scrollToBottomBtn.classList.add('show');
+            } else {
+                scrollToBottomBtn.classList.remove('show');
+            }
+        });
+
+        // Scroll to top
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Scroll to bottom
+        scrollToBottomBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: document.documentElement.scrollHeight,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
