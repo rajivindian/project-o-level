@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Python Cheat Sheet</title>
+    <style>
+        /* CSS STYLING */
+        body {
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            background-color: #1e1e1e; /* Dark Grey */
+            color: #dcdcdc; /* Light Grey Text */
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            width: 250px;
+            background-color: #252526;
+            padding: 20px;
+            border-right: 1px solid #333;
+        }
+
+        .sidebar h2 {
+            color: #50fa7b; /* Neon Green */
+            text-align: center;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar li a {
+            display: block;
+            padding: 10px;
+            color: #f1fa8c; /* Yellow */
+            text-decoration: none;
+            border-bottom: 1px solid #333;
+        }
+
+        .sidebar li a:hover {
+            background-color: #44475a;
+        }
+
+        /* Main Content Area */
+        .content {
+            flex: 1;
+            padding: 40px;
+            overflow-y: auto;
+        }
+
+        h1 { border-bottom: 2px solid #50fa7b; padding-bottom: 10px; }
+        
+        /* Code Block Styling */
+        .code-box {
+            background-color: #000;
+            border: 1px solid #444;
+            border-left: 5px solid #ff79c6; /* Pink Accent */
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        code { color: #8be9fd; } /* Cyan for code */
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>PY CHEAT SHEET</h2>
+        <ul>
+            <li><a href="#basics">1. Python Basics</a></li>
+            <li><a href="#loops">2. Loops</a></li>
+            <li><a href="#tkinter">3. Tkinter (GUI)</a></li>
+            <li><a href="#files">4. File Handling</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        
+        <h1 id="basics">1. Python Basics</h1>
+        <p>How to print and use variables.</p>
+        <div class="code-box">
+<pre><code>name = "Rajiv"
+age = 23
+print(f"My name is {name} and I am {age}")</code></pre>
+        </div>
+
+        <h1 id="loops">2. Loops</h1>
+        <p>Repeating tasks with 'For' loops.</p>
+        <div class="code-box">
+<pre><code>for i in range(5):
+    print(i)  # Prints 0, 1, 2, 3, 4</code></pre>
+        </div>
+
+        <h1 id="tkinter">3. Tkinter (GUI)</h1>
+        <p>Creating a basic window.</p>
+        <div class="code-box">
+<pre><code>import tkinter as tk
+root = tk.Tk()
+root.title("My App")
+root.geometry("300x300")
+root.mainloop()</code></pre>
+        </div>
+
+        <h1 id="files">4. File Handling</h1>
+        <p>Moving files using Shutil (Important for Exam!).</p>
+        <div class="code-box">
+<pre><code>import shutil
+# Move file from Source to Destination
+shutil.move("source.txt", "destination_folder/")</code></pre>
+        </div>
+
+    </div>
+
+</body>
+</html>

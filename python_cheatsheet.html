@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Revision Cheat Sheet</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        nav {
+            background: #f8f9fa;
+            padding: 15px;
+            border-bottom: 2px solid #667eea;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #667eea;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        main {
+            padding: 40px;
+        }
+
+        section {
+            margin-bottom: 40px;
+            scroll-margin-top: 20px;
+        }
+
+        section h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            border-radius: 5px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+        }
+
+        .card h3 {
+            color: #764ba2;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+
+        .keyword {
+            color: #ff79c6;
+        }
+
+        .string {
+            color: #f1fa8c;
+        }
+
+        .comment {
+            color: #6272a4;
+        }
+
+        .function {
+            color: #50fa7b;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background: white;
+        }
+
+        table thead {
+            background: #667eea;
+            color: white;
+        }
+
+        table th {
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        table tbody tr:hover {
+            background: #f5f5f5;
+        }
+
+        .example {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .highlight {
+            background: #fff9c4;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            main {
+                padding: 20px;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🐍 Python Revision Cheat Sheet</h1>
+            <p>A quick reference guide for Python programming</p>
+        </header>
+
+        <nav>
+            <a href="#basics">Basics</a>
+            <a href="#datatypes">Data Types</a>
+            <a href="#operators">Operators</a>
+            <a href="#control">Control Flow</a>
+            <a href="#functions">Functions</a>
+            <a href="#lists">Lists</a>
+            <a href="#strings">Strings</a>
+            <a href="#dictionaries">Dictionaries</a>
+            <a href="#files">File Handling</a>
+            <a href="#exceptions">Exceptions</a>
+        </nav>
+
+        <main>
+            <!-- Basics Section -->
+            <section id="basics">
+                <h2>Basics</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Print Statement</h3>
+                        <div class="code-block">
+<span class="function">print</span>(<span class="string">"Hello, World!"</span>)
+<span class="function">print</span>(<span class="string">"Name:"</span>, name)
+<span class="function">print</span>(a, b, sep=<span class="string">"-"</span>)
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Comments</h3>
+                        <div class="code-block">
+<span class="comment"># Single line comment</span>
+<span class="comment">""" Multi-line comment
+using triple quotes """</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Input</h3>
+                        <div class="code-block">
+name = <span class="function">input</span>(<span class="string">"Enter name: "</span>)
+age = <span class="function">int</span>(<span class="function">input</span>(<span class="string">"Age: "</span>))
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Variable Assignment</h3>
+                        <div class="code-block">
+x = 5
+y = x
+a, b = 1, 2
+x = y = z = 0
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Data Types Section -->
+            <section id="datatypes">
+                <h2>Data Types</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>String</h3>
+                        <div class="code-block">
+s = <span class="string">"Hello"</span>
+s = <span class="string">'Single quotes'</span>
+s = <span class="string">"""Multi
+line"""</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Numbers</h3>
+                        <div class="code-block">
+x = 10        <span class="comment"># int</span>
+y = 3.14      <span class="comment"># float</span>
+z = 2j        <span class="comment"># complex</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Boolean</h3>
+                        <div class="code-block">
+flag = <span class="keyword">True</span>
+flag = <span class="keyword">False</span>
+result = <span class="keyword">True</span> <span class="keyword">and</span> <span class="keyword">False</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Type Conversion</h3>
+                        <div class="code-block">
+<span class="function">int</span>(<span class="string">"5"</span>)      <span class="comment"># 5</span>
+<span class="function">str</span>(123)      <span class="comment"># '123'</span>
+<span class="function">float</span>(<span class="string">"3.14"</span>)  <span class="comment"># 3.14</span>
+<span class="function">bool</span>(1)       <span class="comment"># True</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="note">
+                    <strong>Type Checking:</strong> Use <span class="highlight">type(variable)</span> to check the data type of a variable.
+                </div>
+            </section>
+
+            <!-- Operators Section -->
+            <section id="operators">
+                <h2>Operators</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Operator</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>+, -, *, /</td>
+                            <td>Addition, Subtraction, Multiplication, Division</td>
+                            <td>5 + 3 = 8</td>
+                        </tr>
+                        <tr>
+                            <td>//</td>
+                            <td>Floor Division</td>
+                            <td>7 // 2 = 3</td>
+                        </tr>
+                        <tr>
+                            <td>%</td>
+                            <td>Modulus (Remainder)</td>
+                            <td>7 % 2 = 1</td>
+                        </tr>
+                        <tr>
+                            <td>**</td>
+                            <td>Exponentiation</td>
+                            <td>2 ** 3 = 8</td>
+                        </tr>
+                        <tr>
+                            <td>==, !=, <, >, <=, >=</td>
+                            <td>Comparison Operators</td>
+                            <td>5 == 5, 3 < 5</td>
+                        </tr>
+                        <tr>
+                            <td>and, or, not</td>
+                            <td>Logical Operators</td>
+                            <td>x > 0 and x < 10</td>
+                        </tr>
+                        <tr>
+                            <td>&, |, ^</td>
+                            <td>Bitwise Operators</td>
+                            <td>5 & 3, 5 | 3</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Control Flow Section -->
+            <section id="control">
+                <h2>Control Flow</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>If Statement</h3>
+                        <div class="code-block">
+<span class="keyword">if</span> x > 5:
+    <span class="function">print</span>(<span class="string">"Greater"</span>)
+<span class="keyword">elif</span> x == 5:
+    <span class="function">print</span>(<span class="string">"Equal"</span>)
+<span class="keyword">else</span>:
+    <span class="function">print</span>(<span class="string">"Less"</span>)
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>For Loop</h3>
+                        <div class="code-block">
+<span class="keyword">for</span> i <span class="keyword">in</span> <span class="function">range</span>(5):
+    <span class="function">print</span>(i)
+
+<span class="keyword">for</span> item <span class="keyword">in</span> list:
+    <span class="function">print</span>(item)
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>While Loop</h3>
+                        <div class="code-block">
+<span class="keyword">while</span> x < 10:
+    <span class="function">print</span>(x)
+    x += 1
+
+<span class="keyword">while</span> <span class="keyword">True</span>:
+    <span class="keyword">if</span> condition:
+        <span class="keyword">break</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Loop Control</h3>
+                        <div class="code-block">
+<span class="keyword">break</span>      <span class="comment"># Exit loop</span>
+<span class="keyword">continue</span>   <span class="comment"># Skip iteration</span>
+<span class="keyword">pass</span>       <span class="comment"># Do nothing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example">
+                    <strong>Range Function:</strong>
+                    <div class="code-block">
+<span class="function">range</span>(5)        <span class="comment"># 0, 1, 2, 3, 4</span>
+<span class="function">range</span>(1, 5)     <span class="comment"># 1, 2, 3, 4</span>
+<span class="function">range</span>(0, 10, 2) <span class="comment"># 0, 2, 4, 6, 8</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Functions Section -->
+            <section id="functions">
+                <h2>Functions</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Define Function</h3>
+                        <div class="code-block">
+<span class="keyword">def</span> <span class="function">greet</span>(name):
+    <span class="keyword">return</span> <span class="string">"Hello, "</span> + name
+
+result = <span class="function">greet</span>(<span class="string">"Alice"</span>)
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Default Parameters</h3>
+                        <div class="code-block">
+<span class="keyword">def</span> <span class="function">power</span>(x, n=2):
+    <span class="keyword">return</span> x ** n
+
+<span class="function">power</span>(5)      <span class="comment"># 25</span>
+<span class="function">power</span>(5, 3)   <span class="comment"># 125</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Variable Arguments</h3>
+                        <div class="code-block">
+<span class="keyword">def</span> <span class="function">sum_all</span>(*args):
+    <span class="keyword">return</span> <span class="function">sum</span>(args)
+
+<span class="function">sum_all</span>(1, 2, 3, 4)
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Keyword Arguments</h3>
+                        <div class="code-block">
+<span class="keyword">def</span> <span class="function">info</span>(**kwargs):
+    <span class="keyword">for</span> key, value <span class="keyword">in</span> kwargs.items():
+        <span class="function">print</span>(key, value)
+
+<span class="function">info</span>(name=<span class="string">"Alice"</span>, age=25)
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Lists Section -->
+            <section id="lists">
+                <h2>Lists & Tuples</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>List Creation</h3>
+                        <div class="code-block">
+lst = [1, 2, 3, 4]
+lst = [1, <span class="string">"hello"</span>, 3.14]
+lst = <span class="function">list</span>()
+lst = [x <span class="keyword">for</span> x <span class="keyword">in</span> <span class="function">range</span>(5)]
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>List Methods</h3>
+                        <div class="code-block">
+lst.<span class="function">append</span>(5)
+lst.<span class="function">insert</span>(0, 0)
+lst.<span class="function">remove</span>(3)
+lst.<span class="function">pop</span>()
+lst.<span class="function">sort</span>()
+lst.<span class="function">reverse</span>()
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>List Indexing</h3>
+                        <div class="code-block">
+lst[0]        <span class="comment"># First element</span>
+lst[-1]       <span class="comment"># Last element</span>
+lst[1:3]      <span class="comment"># Slice (1 to 2)</span>
+lst[::2]      <span class="comment"># Every 2nd element</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Tuples</h3>
+                        <div class="code-block">
+tup = (1, 2, 3)
+tup = <span class="function">tuple</span>()
+tup[0]        <span class="comment"># Access</span>
+<span class="comment"># Immutable - cannot modify</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Strings Section -->
+            <section id="strings">
+                <h2>Strings</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>String Methods</h3>
+                        <div class="code-block">
+s.<span class="function">upper</span>()     <span class="comment"># HELLO</span>
+s.<span class="function">lower</span>()     <span class="comment"># hello</span>
+s.<span class="function">strip</span>()     <span class="comment"># Remove spaces</span>
+s.<span class="function">replace</span>(<span class="string">"a"</span>, <span class="string">"b"</span>)
+s.<span class="function">split</span>()     <span class="comment"># Split by space</span>
+s.<span class="function">find</span>(<span class="string">"sub"</span>)  <span class="comment"># Find index</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>String Formatting</h3>
+                        <div class="code-block">
+name = <span class="string">"Alice"</span>
+<span class="string">f"Hello {name}"</span>
+<span class="string">"Hello {}".format</span>(name)
+<span class="string">"Hello %s" % name</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>String Indexing</h3>
+                        <div class="code-block">
+s = <span class="string">"Python"</span>
+s[0]          <span class="comment"># 'P'</span>
+s[1:4]        <span class="comment"># 'yth'</span>
+s[-1]         <span class="comment"># 'n'</span>
+<span class="function">len</span>(s)       <span class="comment"># 6</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dictionaries Section -->
+            <section id="dictionaries">
+                <h2>Dictionaries</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Dictionary Creation</h3>
+                        <div class="code-block">
+d = {<span class="string">"name"</span>: <span class="string">"Alice"</span>, <span class="string">"age"</span>: 25}
+d = <span class="function">dict</span>()
+d[<span class="string">"city"</span>] = <span class="string">"NYC"</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Dictionary Methods</h3>
+                        <div class="code-block">
+d.<span class="function">keys</span>()     <span class="comment"># All keys</span>
+d.<span class="function">values</span>()   <span class="comment"># All values</span>
+d.<span class="function">items</span>()    <span class="comment"># Key-value pairs</span>
+d.<span class="function">get</span>(<span class="string">"name"</span>)  <span class="comment"># Get value</span>
+d.<span class="function">pop</span>(<span class="string">"age"</span>)   <span class="comment"># Remove & return</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Dictionary Access</h3>
+                        <div class="code-block">
+d[<span class="string">"name"</span>]      <span class="comment"># Access value</span>
+d.<span class="function">get</span>(<span class="string">"age"</span>, 0) <span class="comment"># Default value</span>
+<span class="string">"name"</span> <span class="keyword">in</span> d  <span class="comment"># Check key</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- File Handling Section -->
+            <section id="files">
+                <h2>File Handling</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Reading Files</h3>
+                        <div class="code-block">
+f = <span class="function">open</span>(<span class="string">"file.txt"</span>, <span class="string">"r"</span>)
+content = f.<span class="function">read</span>()
+lines = f.<span class="function">readlines</span>()
+f.<span class="function">close</span>()
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Writing Files</h3>
+                        <div class="code-block">
+f = <span class="function">open</span>(<span class="string">"file.txt"</span>, <span class="string">"w"</span>)
+f.<span class="function">write</span>(<span class="string">"Hello"</span>)
+f.<span class="function">close</span>()
+
+<span class="comment"># Append mode</span>
+f = <span class="function">open</span>(<span class="string">"file.txt"</span>, <span class="string">"a"</span>)
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>With Statement</h3>
+                        <div class="code-block">
+<span class="keyword">with</span> <span class="function">open</span>(<span class="string">"file.txt"</span>, <span class="string">"r"</span>) <span class="keyword">as</span> f:
+    content = f.<span class="function">read</span>()
+<span class="comment"># File auto-closes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="note">
+                    <strong>File Modes:</strong> "r" (read), "w" (write), "a" (append), "x" (create), "b" (binary)
+                </div>
+            </section>
+
+            <!-- Exceptions Section -->
+            <section id="exceptions">
+                <h2>Exception Handling</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Try-Except</h3>
+                        <div class="code-block">
+<span class="keyword">try</span>:
+    x = 1 / 0
+<span class="keyword">except</span> ZeroDivisionError:
+    <span class="function">print</span>(<span class="string">"Error!"</span>)
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Multiple Exceptions</h3>
+                        <div class="code-block">
+<span class="keyword">try</span>:
+    x = <span class="function">int</span>(<span class="string">"abc"</span>)
+<span class="keyword">except</span> (ValueError, TypeError):
+    <span class="function">print</span>(<span class="string">"Invalid input"</span>)
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Finally Block</h3>
+                        <div class="code-block">
+<span class="keyword">try</span>:
+    f = <span class="function">open</span>(<span class="string">"file.txt"</span>)
+<span class="keyword">finally</span>:
+    f.<span class="function">close</span>()
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Raise Exception</h3>
+                        <div class="code-block">
+<span class="keyword">if</span> x < 0:
+    <span class="keyword">raise</span> ValueError(<span class="string">"Must be positive"</span>)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="note">
+                    <strong>Common Exceptions:</strong> ValueError, TypeError, KeyError, IndexError, ZeroDivisionError, FileNotFoundError
+                </div>
+            </section>
+
+            <!-- Built-in Functions -->
+            <section>
+                <h2>Built-in Functions</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Function</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="highlight">len()</span></td>
+                            <td>Length of object</td>
+                            <td>len([1, 2, 3]) = 3</td>
+                        </tr>
+                        <tr>
+                            <td><span class="highlight">sum()</span></td>
+                            <td>Sum of elements</td>
+                            <td>sum([1, 2, 3]) = 6</td>
+                        </tr>
+                        <tr>
+                            <td><span class="highlight">max(), min()</span></td>
+                            <td>Maximum/Minimum value</td>
+                            <td>max([1, 2, 3]) = 3</td>
+                        </tr>
+                        <tr>
+                            <td><span class="highlight">sorted()</span></td>
+                            <td>Return sorted list</td>
+                            <td>sorted([3, 1, 2]) = [1, 2, 3]</td>
+                        </tr>
+                        <tr>
+                            <td><span class="highlight">enumerate()</span></td>
+                            <td>Get index and value</td>
+                            <td><span class="keyword">for</span> i, v <span class="keyword">in</span> enumerate([1, 2])</td>
+                        </tr>
+                        <tr>
+                            <td><span class="highlight">zip()</span></td>
+                            <td>Combine iterables</td>
+                            <td>zip([1, 2], [3, 4])</td>
+                        </tr>
+                        <tr>
+                            <td><span class="highlight">map(), filter()</span></td>
+                            <td>Transform/filter items</td>
+                            <td>map(int, ['1', '2'])</td>
+                        </tr>
+                        <tr>
+                            <td><span class="highlight">any(), all()</span></td>
+                            <td>Check conditions</td>
+                            <td>any([False, True]) = True</td>
+                        </tr>
+                        <tr>
+                            <td><span class="highlight">abs(), round()</span></td>
+                            <td>Absolute value, Rounding</td>
+                            <td>abs(-5) = 5</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Tips Section -->
+            <section>
+                <h2>Tips & Tricks</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>List Comprehension</h3>
+                        <div class="code-block">
+squares = [x**2 <span class="keyword">for</span> x <span class="keyword">in</span> <span class="function">range</span>(5)]
+evens = [x <span class="keyword">for</span> x <span class="keyword">in</span> lst <span class="keyword">if</span> x % 2 == 0]
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Lambda Functions</h3>
+                        <div class="code-block">
+square = <span class="keyword">lambda</span> x: x**2
+square(5)  <span class="comment"># 25</span>
+
+sorted(lst, key=<span class="keyword">lambda</span> x: x[1])
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>String Slicing</h3>
+                        <div class="code-block">
+s = <span class="string">"Python"</span>
+s[::-1]     <span class="comment"># "nohtyP" (reverse)</span>
+s[1:4]      <span class="comment"># "yth"</span>
+s[::2]      <span class="comment"># "Pto"</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Unpacking</h3>
+                        <div class="code-block">
+a, b = (1, 2)
+x, *middle, y = [1, 2, 3, 4, 5]
+<span class="comment"># x=1, middle=[2,3,4], y=5</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Python Revision Cheat Sheet | A Quick Reference Guide</p>
+            <p>Keep this handy for quick Python lookups!</p>
+        </footer>
+    </div>
+</body>
+</html>
